@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas
 
+st.set_page_config(layout="wide")
 st.header("The Best Company")
 
 company_desc = """
@@ -11,9 +12,9 @@ st.write(company_desc)
 st.subheader("Our Team")
 
 col1, col2, col3 = st.columns(3)
-df = pandas.read_csv("data.csv", sep=",")
+df = pandas.read_csv("data.csv")
 thirds = len(df) // 3
-print(thirds)
+
 with col1:
     for index, row in df[:thirds].iterrows():
         full_name = f"{row['first name']} {row['last name']}"
