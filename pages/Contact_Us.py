@@ -22,5 +22,4 @@ Subject: {reason} request from {user_email}
     button = st.form_submit_button("Send Email")
     if button:
         email_util.send_email(message)
-        print(button)
         st.info("Your email was sent successfully")
