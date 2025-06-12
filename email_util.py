@@ -9,9 +9,6 @@ def send_email(user_message):
     username = os.getenv('EMAIL')
     password = os.getenv('PASSWORD')
     receiver = os.getenv('EMAIL')
-
-    print(username)
-    print(password)
     my_context = ssl.create_default_context()
 
     with smtplib.SMTP_SSL(host, port, context=my_context) as server:
