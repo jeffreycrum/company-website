@@ -1,6 +1,9 @@
+import pandas
 import streamlit as st
 
 import email_util
+
+df = pandas.read_csv("topics.csv")
 
 st.header('Contact Us!')
 
@@ -9,7 +12,7 @@ with st.form(key='email_form'):
     raw_message = st.text_area("Enter your message.")
     reason = st.selectbox(
         "What would you like to discuss?",
-        ("Job Inquiry", "Project Proposal", "Other")
+        df['topic']
     )
     message = f"""\
 Subject: {reason} request from {user_email}
